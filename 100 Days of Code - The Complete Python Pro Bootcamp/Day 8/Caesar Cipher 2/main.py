@@ -20,7 +20,24 @@ def encrypt(original_text, shift_amount):
     print(f"Here is the encoded result: {cipher_text}")
 
 
-encrypt(original_text=text, shift_amount=shift)
+# encrypt(original_text=text, shift_amount=shift)
 
+
+def decrypt(original_text,shift_amount):
+    cipher2=""
+    for letter in original_text:
+        shifted=alphabet.index(letter)-shift_amount
+        shifted%=len(alphabet)
+        cipher2+=alphabet[shifted]
+    print(f"Decrypted result is:{cipher2}")
+
+# decrypt(original_text=text,shift_amount=shift)
+
+def caesar(direction):
+    if(direction=="encode"):
+        encrypt(original_text=text,shift_amount=shift)
+    else:
+        decrypt(original_text=text,shift_amount=shift)
+caesar(direction)
 
 
